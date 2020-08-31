@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 //const DB = require('nedb');  
@@ -6,7 +5,6 @@ const app = express();
 //var hostile = require('hostile');
 //const process = require('process');
 //var edge = require('edge-js'); 
-//var fs = require ('fs'); 
 var cookieParser = require('cookie-parser');
 //var runasPromise = require ('runas-win');
 //const BrowserHistory = require('node-browser-history');
@@ -77,7 +75,6 @@ const first = (req, res, next) => {
   });
  });
 }
-
 const javaInfo = await execShellCommand('java -version');
   console.log(javaInfo); */
 /*var runas = require ('runas-win');
@@ -126,7 +123,6 @@ var node =
   FileStream fs = fi.Open(FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read); 
     
     StreamWriter sw = new StreamWriter(fs); 
-
             	char sEntryIPAddr = 127.0.0.1;
             	char sEntryURL = "www.test.com";
         sw.WriteLine(sEntryIPAddr+" "+ sEntryURL);
@@ -144,7 +140,6 @@ var hello = edge.func(function () {  /*
     }
     
     });
-
 hello(node ,  function (error, result) {
     if (error)
     console.log(error);
@@ -156,24 +151,20 @@ hello(node ,  function (error, result) {
         // console.log(stderr);
         return console.log(err);
     }
-
     // Done.
     console.log(stdout);
 });  */
 
 /*'use strict';
-
 const
     spawn = require( 'child_process' ).spawnSync,
     vbs = spawn( 'cscript.exe', [ '../vbs/slave.vbs', 'one' ] );
-
 console.log( `stderr: ${vbs.stderr.toString()}` );
 console.log( `stdout: ${vbs.stdout.toString()}` );
 console.log( `status: ${vbs.status}` );
   */   
 
 /*const { exec } = require("child_process");
-
 exec("echo "192.168.8.101  www.example.com " >> /etc/hosts", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
@@ -205,39 +196,20 @@ const second = (req, res) => {
 	res.cookie('cookieName', randomNumber);
 	//console.log('Cookies:', req.cookies); 
 	console.log("Cookies Successful");
-   
-   // app.use(express.static(__dirname + '/Public'));
-    
-     /*app.get('/', function (req, res){
-         res.sendFile(__dirname + '/index.html');
+	//res.sendFile(path.join(__dirname + '/app/index.html')); 
+	//res.sendFile('/app/index.html', {root: path.dirname(__dirname)});
+	//res.send('<p2>Test Quincy (Gifted/Space) !!!<p2>');
+	//res.write('<html>');
+        //res.write('<head> <title> Hello TutorialsPoint </title> </head>');
+        //res.write(' <body> Hello Tutorials Point </body>');
+        //res.write('</html>');
+	res.end();
+	
+	
+	
 
-
-     });  */  
-
-	//res.sendFile(__dirname + '/index.html'); 
-	//res.sendFile('C:\Users\DELL OPTIPLEX780\Desktop\NodeServer\index.html'); 
-	//res.end(path.join(__dirname+'/index.html')); 
-	/*res.writeHead(200, {'Content-Type': 'text/html>'});
-    fs.readFile('./index.html', null, function(error, data) {
-    	if (error) {
-    		res.writeHead(404); 
-    		res.write('Page Not Found'); 
-    		 	}  else { 
-              res.write(data); 
-
-    		 	}
-    		 	res.end();
-    }); */ 
-        res.end(); 
-        //next(); 
 }; 
 	
-/*	app.get('/', function (req, res){
-         res.sendFile(__dirname + '/Public/index.html');
-         res.end();
-
-     }); */
-
 	/*var string = req.body;
 	console.log(req.body);
 	//console.log(document.cookie);     
@@ -246,7 +218,7 @@ const second = (req, res) => {
 		var ftest = test1.split(";"); 
 		var ftest1 = ftest[1];  
 	console.log(ftest1); 
-		 
+		
 		var tst = string.split("/").slice(-2);
 		var tst2 = tst[0];  
 		var tst3 = tst2.split(" ");
@@ -256,14 +228,12 @@ const second = (req, res) => {
 		 // res.writeHead(200, {'Content-Type':'text/html'});
 		// res.send("Hello"); 
 		// res.end();
-
 function testbr() {
 		 if (tst4 == "Firefox"){ 
 			console.log("Yes its Firefox"); 
 			////////  
 	}  else {
 		console.log("Its not Firefox");
-
 	}} */
 
 module.exports = { first, second };
