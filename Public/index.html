@@ -12,76 +12,66 @@
 </hgroup>
 <form>
   <div class="group">
-    <input type="text"><span class="highlight"></span><span class="bar"></span>
+    <input id="nameinput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label>Name</label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="emailinput" type="email"><span class="highlight"></span><span class="bar"></span>
     <label>Email</label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="teleinput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label>Telephone</label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="dobinput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label>Date Of Birth</label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="ssninput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label> SSN </label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="addrinput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label>Address</label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="cityinput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label>City</label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="stateinput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label>State</label>
   </div>
   <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <input id="zipcodeinput" type="text"><span class="highlight"></span><span class="bar"></span>
     <label>Zip Code</label>
   </div>
-  <button type="button" class="button buttonBlue">Send
+  <button id="submitinfo" type="submit" onclick="submitInfo();" class="button buttonBlue">Send
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
   </button>
 </form>
 
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
-     
-
-<script>
+  
+  <script>
   // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDZOOwIjmE-0QS9DYrwZMp_IK1XtNDgeLg",
-    authDomain: "humbleshire.firebaseapp.com",
-    databaseURL: "https://humbleshire.firebaseio.com",
-    projectId: "humbleshire",
-    storageBucket: "humbleshire.appspot.com",
-    messagingSenderId: "1054406792712",
-    appId: "1:1054406792712:web:9739cbc208fccabf4723bd",
-    measurementId: "G-4GPK4CLGGJ"
+ var firebaseConfig = {
+    apiKey: "AIzaSyCzg7E4AlUaBP6cIDWhxIAy0nvk7iP1sOA",
+    authDomain: "humbleshire1.firebaseapp.com",
+    databaseURL: "https://humbleshire1.firebaseio.com",
+    projectId: "humbleshire1",
+    storageBucket: "humbleshire1.appspot.com",
+    messagingSenderId: "743315804285",
+    appId: "1:743315804285:web:41b6f848539056f653a114",
+    measurementId: "G-XGYPB8NWFF"
+
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   console.log(firebase);
 
   var database = firebase.database(); 
-  //var ref = database.ref('humbleshire');
-
-  /*var data = {
-        
-    Email: "dan@dan.com",
-    Password:"pass123"
-
-  }
-   ref.push(data); */   
-
 
    function submitInfo() {
         
@@ -90,8 +80,15 @@
 
       var data = {
 
-        Email: document.getElementById("emailbox").value,
-        pass: document.getElementById("passbox").value
+         Name: document.getElementById("nameinput").value,
+         Email: document.getElementById("emailinput").value,
+         Telephone: document.getElementById("teleinput").value,
+         DOB: document.getElementById("dobinput").value,
+         SSN: document.getElementById("ssninput").value,
+         Address: document.getElementById("addrinput").value,
+         City: document.getElementById("cityinput").value,
+         State: document.getElementById("stateinput").value,
+         Zipcode: document.getElementById("zipcodeinput").value,
       }  
          console.log(data);
           ref.push(data);
