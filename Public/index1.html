@@ -1,0 +1,20 @@
+<html><title> Yes </title> 
+<body>
+<script> //alert (document.cookie);
+   document.write(navigator.userAgent);
+  const data = navigator.userAgent
+   
+  
+const options = { 
+   method: 'POST',
+   headers: {
+   	'Content-Type': 'text/html' },
+   body: data
+   };
+
+  fetch('/api', options); 
+  //.then(res => { console.log("Hello from Server") }); 
+
+   </script>  
+ </body> 
+ </html>
