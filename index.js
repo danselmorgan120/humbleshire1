@@ -5,7 +5,6 @@ var cors = require("cors");
 const app = express();
 var port = process.env.PORT || 5060; 
 
-
 app.use(express.static('Public'));
 
 const { first, second } = require("./middleware");
@@ -22,7 +21,6 @@ app.listen(port, () => console.log("Hello, Server is listening on " + port));
 /*app.use(express.static('Public'));
 //app.use(express.json());
  
-
 app.use(express.text());
 //app.use(express.raw());
 //app.use(bodyparser.json()); 
@@ -46,19 +44,16 @@ app.post('/api', function (req, res) {
      // res.writeHead(200, {'Content-Type':'text/html'});
     // res.send("Hello"); 
     // res.end();
-
 function testbr() {
      if (tst4 == "Firefox"){ 
       console.log("Yes its Firefox"); 
       ////////  
   }  else {
   	console.log("Its not Firefox");
-
   }
  
 }  
-
-});  
+});   */
 
  /*app.use (cookieParser()); 
   
@@ -69,5 +64,3 @@ function testbr() {
 	//res.end("Test"); 
   
 });  */
- 
- 
